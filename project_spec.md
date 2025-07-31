@@ -1,13 +1,5 @@
 # **DailySkies**
 
-## Roles[6 member]
-- UI/UX design: Mariia
-- Programmer A: Huangming
-- Programmer B: Gordon Mo
-- API consultant: Maanveer
-- Product Manager: Adrian Abella
-- Presenter: Arnold
-
 ## Table of Contents
 
 1. [App Overview](#App-Overview)
@@ -20,17 +12,18 @@
 ### Description
 
 This is an app that allows users to observe the current weather status of various cities around the world. Users can select from this
+list to more closely observe a particular city with more details on its weather. 
 
 ### App Evaluation
 
 <!-- Evaluation of your app across the following attributes -->
 
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Weather/Tools and Utilities
+- **Mobile:** Accessibility. Allows user to check weather quickly instead of opening a browser
+- **Story:** This app gives a simple view of key weather statistics of various cities allowing users to quickly observe them, uncluttered from other unnecessary details.
+- **Market:** Most of people need to check weather before having any plan. We provide a nice option
+- **Habit:** User may open and check weather everyday before they go outside.
+- **Scope:** The app is quite narrow in scope, only displaying a list of cities or one city in particular for more details. It should not be very technically challenging.
 
 ## Product Spec
 
@@ -82,7 +75,7 @@ For Milestone 2, include **2+ Videos/GIFs** of the build process here!
 
 ## License
 
-Copyright **yyyy** **your name**
+Copyright 2025 Arnold Miranda-Pino, Gordon Mo, Mariia Onokhina, Maanveer Singh, Huangming Wang, Eric Lin, Adrian Abella Acosta
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
