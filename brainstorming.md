@@ -2,28 +2,28 @@
 
 ## Ideas
 
-Mariia:
+#### Mariia:
 - Game/movie searching website
 - Country explorer
 - Recipe/cookbook app
 
 
-Maanveer:
+#### Maanveer:
 - Weather App
 - News sorting app
 - Ranking Restraunt App
 
-Gordon:
+#### Gordon:
 - Notes app
 - Sleep tracker app
 - Restaurant finder app
 
-Huangming:
+##### Huangming:
 - Game resource calculator app
 - Game guide quick check app
 - Animal Wiki App
 
-Adrian Abella
+#### Adrian Abella:
 - Movie Tracking App
 - Book Tracking App
 - Shopping Wishlist App
@@ -42,7 +42,7 @@ Scope: How well-formed is the scope for this app?
 
 ### Weather App
 - **Mobile:** Accessibility. Allows user to check weather quickly instead of opening a browser
-- **Story:**
+- **Story:** This app gives a simple view of key weather statistics of various cities allowing users to quickly observe them, uncluttered from other unnecessary details.  
 - **Market:** Most of people need to check weather before having any plan. We provide a nice option
 - **Habit:** User may open and check weather everyday before they go outside.
 - **Scope:** To finish this, we need to:
