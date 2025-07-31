@@ -1,11 +1,15 @@
 <!-- (This is a comment) INSTRUCTIONS: Go through this page and fill out any **bolded** entries with their correct values.-->
 
-# AND101 Milestone 2 - **Team/App Name**
+# AND101 Milestone 2 - DailySkies (Group 6)
 
 Submitted by:
-- **Team Member 1 Name Here**
-- **Team Member 2 Name Here**
-- **etc**
+- Arnold Miranda-Pino 
+- Gordon Mo 
+- Mariia Onokhina 
+- Maanveer Singh 
+- Huangming Wang 
+- Eric Lin 
+- Adrian Abella Acosta
 
 Time spent: **X** hours spent in total
 
@@ -19,8 +23,14 @@ This document provides a summary of our project building process for our app, **
 
 The following REQUIRED features are completed:
 
-- [ ] Assign features to each member of your group
-- [ ] Establish a goal time for completing each feature
+- [x] Feature Assignment:
+  - UI/UX Design: Mariia Onokhina designed a cohesive UI for the app.
+  - Programmer A: Huangming Wang ...
+  - Programmer B: Gordon Mo ...
+  - API Consultant: Maanveer Singh integrated a free weather API with the app.
+  - Product Manager: Adrian Abella Acosta submitted all documents, managed Git repository, developed wireframes, and (presented?)
+- [x] Goal Times:
+  - ...
 
 The following REQUIRED files are included:
 
