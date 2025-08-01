@@ -31,8 +31,8 @@ list to more closely observe a particular city with more details on its weather.
 
 Required Features:
 
-- **fill in here**
-- ...
+- User can search weather from specific cities
+- User can click on a specific city to view more details
 
 Stretch Features:
 
@@ -41,10 +41,8 @@ Stretch Features:
 
 ### 2. Chosen API(s)
 
-- **list first API endpoint here**
-    - **list associated required feature here**
-    - ...
-- ...
+- Weather API
+    - Get the weather from a city
 
 ### 3. User Interaction
 
