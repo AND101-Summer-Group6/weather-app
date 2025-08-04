@@ -6,14 +6,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import okhttp3.Headers
 
 class MainActivity : AppCompatActivity() {
-    val key = ""
-    val location = "London"
-    val url = "https://api.weatherapi.com/v1/forecast.json?key=$key&q=$location&days=7"
+    val key = "9fb3707bafcd4d91a0e05513250408"
+    private lateinit var cityList : MutableList<String>
+    private lateinit var cityTempList : MutableList<String>
+    private lateinit var rvWeather : RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,13 +27,26 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        fetchWeather()
+        cityList = mutableListOf("London", "New York", "Paris", "Tokyo")
+        cityTempList = mutableListOf()
+        rvWeather = findViewById(R.id.weather_list)
+        for (city in cityList) {
+            fetchWeather(city)
+        }
+
     }
-    private fun fetchWeather() {
+    private fun fetchWeather(location: String) {
         val client = AsyncHttpClient()
-        client[url, object : JsonHttpResponseHandler() {
+        client["https://api.weatherapi.com/v1/forecast.json?key=$key&q=$location&days=7", object : JsonHttpResponseHandler() {
             override fun onSuccess(statusCode: Int, headers: Headers, json: JsonHttpResponseHandler.JSON) {
-                Log.d("Weather", "response successful")
+                Log.d("Weather", "response successful: $json")
+                val current = json.jsonObject.getJSONObject("current")
+                val tempF = current.getString("temp_f")
+                Log.d("tempF", "current temp set: $tempF")
+                cityTempList.add("$tempF\u00B0F")
+                val adapter = WeatherAdapter(cityList, cityTempList)
+                rvWeather.adapter = adapter
+                rvWeather.layoutManager = LinearLayoutManager(this@MainActivity)
             }
 
             override fun onFailure(
