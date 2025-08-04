@@ -3,18 +3,21 @@ package com.group6.weatherapp
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
-class WeatherAdapter(private val cityList: List<String>, private val cityTempList: List<String>) : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
+class WeatherAdapter(private val cityList: List<String>, private val cityTempList: List<String>, private val iconUrlList : List<String>) : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val cityName: TextView
         val cityTemperature: TextView
-
+        val weatherPic : ImageView
         init {
             // Find our RecyclerView item's ImageView for future use
             cityName = view.findViewById(R.id.city_name)
             cityTemperature = view.findViewById(R.id.temperature)
+            weatherPic = view.findViewById(R.id.weather_pic)
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,5 +33,9 @@ class WeatherAdapter(private val cityList: List<String>, private val cityTempLis
 
         holder.cityName.text = cityList[position]
         holder.cityTemperature.text = cityTempList[position]
+
+        Glide.with(holder.itemView.context)
+            .load(iconUrlList[position])
+            .into(holder.weatherPic)
     }
 }

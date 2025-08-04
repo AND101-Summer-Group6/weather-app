@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var cityList : MutableList<String>
     private lateinit var cityTempList : MutableList<String>
     private lateinit var rvWeather : RecyclerView
+    private lateinit var iconUrlList : MutableList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         }
         cityList = mutableListOf("London", "New York", "Paris", "Tokyo", "Bangkok", "Chicago", "Los Angeles", "San Diego")
         cityTempList = mutableListOf()
+        iconUrlList = mutableListOf()
         rvWeather = findViewById(R.id.weather_list)
         for (city in cityList) {
             fetchWeather(city)
@@ -42,9 +44,12 @@ class MainActivity : AppCompatActivity() {
                 Log.d("Weather", "response successful: $json")
                 val current = json.jsonObject.getJSONObject("current")
                 val tempF = current.getString("temp_f")
+                val condition = current.getJSONObject("condition")
+                val iconURL = "https:" + condition.getString("icon")
                 Log.d("tempF", "current temp set: $tempF")
                 cityTempList.add("$tempF\u00B0F")
-                val adapter = WeatherAdapter(cityList, cityTempList)
+                iconUrlList.add(iconURL)
+                val adapter = WeatherAdapter(cityList, cityTempList, iconUrlList)
                 rvWeather.adapter = adapter
                 rvWeather.layoutManager = LinearLayoutManager(this@MainActivity)
             }
