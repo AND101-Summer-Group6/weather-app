@@ -13,7 +13,7 @@ import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import okhttp3.Headers
 
 class MainActivity : AppCompatActivity() {
-    val key = ""
+    val key = BuildConfig.apiKeySafe
     private lateinit var cityList : MutableList<String>
     private lateinit var cityTempList : MutableList<String>
     private lateinit var rvWeather : RecyclerView
