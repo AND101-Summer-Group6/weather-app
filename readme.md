@@ -15,7 +15,7 @@ Time spent: **X** hours spent in total
 
 ## Summary
 
-This document provides a summary of our project building process for our app, **App Name Here**
+This document provides a summary of our project building process for our app, **DailySkies**
 
 ## Milestone Requirements
 
