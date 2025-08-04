@@ -13,7 +13,7 @@ import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import okhttp3.Headers
 
 class MainActivity : AppCompatActivity() {
-    val key = "9fb3707bafcd4d91a0e05513250408"
+    val key = ""
     private lateinit var cityList : MutableList<String>
     private lateinit var cityTempList : MutableList<String>
     private lateinit var rvWeather : RecyclerView
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        cityList = mutableListOf("London", "New York", "Paris", "Tokyo")
+        cityList = mutableListOf("London", "New York", "Paris", "Tokyo", "Bangkok", "Chicago", "Los Angeles", "San Diego")
         cityTempList = mutableListOf()
         rvWeather = findViewById(R.id.weather_list)
         for (city in cityList) {
