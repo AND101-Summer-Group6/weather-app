@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.weather_app"
+    namespace = "com.group6.weatherapp"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.weather_app"
+        applicationId = "com.group6.weatherapp"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -36,7 +36,7 @@ android {
 }
 
 dependencies {
-    implementation("com.codepath.libraries:asynchttpclient:2.2.0")
+    implementation(libs.asynchttpclient)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

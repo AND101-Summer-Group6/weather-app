@@ -1,4 +1,4 @@
-package com.example.weather_app
+package com.group6.weatherapp
 
 import android.os.Bundle
 import android.util.Log
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     private fun fetchWeather(location: String) {
         val client = AsyncHttpClient()
         client["https://api.weatherapi.com/v1/forecast.json?key=$key&q=$location&days=7", object : JsonHttpResponseHandler() {
-            override fun onSuccess(statusCode: Int, headers: Headers, json: JsonHttpResponseHandler.JSON) {
+            override fun onSuccess(statusCode: Int, headers: Headers, json: JSON) {
                 Log.d("Weather", "response successful: $json")
                 val current = json.jsonObject.getJSONObject("current")
                 val tempF = current.getString("temp_f")
