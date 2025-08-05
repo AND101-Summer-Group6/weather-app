@@ -41,10 +41,9 @@ Stretch Features:
 
 ### 2. Chosen API(s)
 
-- Open-Meteo 
-  - An open-source weather API that offers free access to multiple API's for non-commercial use. 
-  - Using the Forecast API to get the precipitation, humidity, wind, day, date and the temperature for the week.
-  - Using the Geocoding and Elevation API to get the coordinates for provided cities. 
+- **Weather API**
+  - **check out api_handbook.md for usage guidelines.**
+   
 
 ### 3. User Interaction
 
