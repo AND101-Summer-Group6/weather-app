@@ -2,6 +2,7 @@ package com.group6.weatherapp
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -47,9 +48,16 @@ class MainActivity : AppCompatActivity() {
                 val current = json.jsonObject.getJSONObject("current")
                 val tempF = current.getString("temp_f")
                 Log.d("tempF", "current temp set: $tempF")
-                val currCityWeather= CityWeather(location,"$tempF\u00B0F")
+                val url = current.getJSONObject("condition").getString("icon")
+                Log.d("url", "icon url set: $url")
+                val currCityWeather= CityWeather(location,"$tempF\u00B0F", url)
                 cityWeatherList.add(currCityWeather)
-                val adapter = WeatherAdapter(cityWeatherList)
+                val adapter = WeatherAdapter(cityWeatherList, object : WeatherAdapter.OnItemLongClickListener {
+                    override fun onItemLongClick(position: Int) {
+                        val item = cityWeatherList[position]
+                        Toast.makeText(this@MainActivity, "Long clicked: ${item.city}", Toast.LENGTH_SHORT).show()
+                    }
+                })
                 rvWeather.adapter = adapter
                 rvWeather.layoutManager = LinearLayoutManager(this@MainActivity)
             }
