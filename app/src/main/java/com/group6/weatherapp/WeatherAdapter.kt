@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class WeatherAdapter(private val cityList: List<String>, private val cityTempList: List<String>) : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
+class WeatherAdapter(private val weatherList: List<CityWeather>) : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val cityName: TextView
         val cityTemperature: TextView
@@ -24,11 +24,11 @@ class WeatherAdapter(private val cityList: List<String>, private val cityTempLis
 
         return ViewHolder(view)
     }
-    override fun getItemCount() = cityList.size
+    override fun getItemCount() = weatherList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        holder.cityName.text = cityList[position]
-        holder.cityTemperature.text = cityTempList[position]
+        val weather = weatherList[position]
+        holder.cityName.text = weather.city
+        holder.cityTemperature.text = weather.temperature
     }
 }

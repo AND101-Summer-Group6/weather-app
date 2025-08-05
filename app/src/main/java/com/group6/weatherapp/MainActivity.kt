@@ -10,26 +10,30 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
+import com.group6.weatherapp.databinding.ActivityMainBinding
 import okhttp3.Headers
 
 class MainActivity : AppCompatActivity() {
     val key = BuildConfig.apiKeySafe
     private lateinit var cityList : MutableList<String>
-    private lateinit var cityTempList : MutableList<String>
+    private lateinit var cityWeatherList : MutableList<CityWeather>
     private lateinit var rvWeather : RecyclerView
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        binding= ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
         cityList = mutableListOf("London", "New York", "Paris", "Tokyo", "Bangkok", "Chicago", "Los Angeles", "San Diego")
-        cityTempList = mutableListOf()
-        rvWeather = findViewById(R.id.weather_list)
+        cityWeatherList = mutableListOf()
+        rvWeather = binding.weatherList
         for (city in cityList) {
             fetchWeather(city)
         }
@@ -43,8 +47,9 @@ class MainActivity : AppCompatActivity() {
                 val current = json.jsonObject.getJSONObject("current")
                 val tempF = current.getString("temp_f")
                 Log.d("tempF", "current temp set: $tempF")
-                cityTempList.add("$tempF\u00B0F")
-                val adapter = WeatherAdapter(cityList, cityTempList)
+                val currCityWeather= CityWeather(location,"$tempF\u00B0F")
+                cityWeatherList.add(currCityWeather)
+                val adapter = WeatherAdapter(cityWeatherList)
                 rvWeather.adapter = adapter
                 rvWeather.layoutManager = LinearLayoutManager(this@MainActivity)
             }
