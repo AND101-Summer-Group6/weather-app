@@ -72,7 +72,7 @@ The JSON response will follow this structure:
     "gust_kph": 0.0
 }
 }
-
+```
 ## Error Handling and Rate Limiting
 
 - Standard error responses follow this format:
