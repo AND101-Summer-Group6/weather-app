@@ -31,7 +31,25 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        cityList = mutableListOf("London", "New York", "Paris", "Tokyo", "Bangkok", "Chicago", "Los Angeles", "San Diego")
+        //cityList = mutableListOf("London", "New York", "Paris", "Tokyo", "Bangkok", "Chicago", "Los Angeles", "San Diego")
+        cityList = mutableListOf(
+            "New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia",
+            "San Antonio", "San Diego", "Dallas", "San Jose", "Austin", "Jacksonville",
+            "Fort Worth", "Columbus", "Charlotte", "San Francisco", "Indianapolis",
+            "Seattle", "Denver", "Washington", "Boston", "Nashville", "Baltimore",
+            "Oklahoma City", "Louisville", "Portland", "Las Vegas", "Memphis", "Detroit",
+            "Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa",
+            "Mexico City", "Monterrey", "Puebla", "Tijuana", "León",
+            "London", "Berlin", "Madrid", "Rome", "Paris", "Amsterdam", "Vienna",
+            "Prague", "Budapest", "Warsaw", "Stockholm", "Copenhagen", "Oslo",
+            "Helsinki", "Dublin", "Lisbon", "Athens", "Brussels", "Zurich",
+            "Barcelona", "Milan", "Naples", "Hamburg", "Munich", "Cologne",
+            "Frankfurt", "Stuttgart", "Manchester", "Birmingham", "Liverpool",
+            "Edinburgh", "Glasgow", "Cardiff", "Belfast",
+            "Tokyo", "Delhi", "Shanghai", "Dhaka", "São Paulo", "Cairo", "Mexico City",
+            "Beijing", "Mumbai", "Osaka", "Karachi", "Chongqing", "Istanbul", "Buenos Aires",
+            "Kolkata", "Manila", "Lagos", "Rio de Janeiro", "Tianjin", "Kinshasa"
+        )
         cityWeatherList = mutableListOf()
         rvWeather = binding.weatherList
         for (city in cityList) {

@@ -1,5 +1,8 @@
 package com.group6.weatherapp
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,7 +54,10 @@ class WeatherAdapter(private val weatherList: List<CityWeather>) : RecyclerView.
             .fitCenter()
             .into(holder.cityConditionIcon)
         holder.itemView.setOnLongClickListener {
-            Toast.makeText(holder.itemView.context, "You long-clicked ${weather.city}", Toast.LENGTH_SHORT).show()
+            val clipboard = it.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("City", weather.city)
+            clipboard.setPrimaryClip(clip)
+            Toast.makeText(holder.itemView.context, "Copied ${weather.city} to clipboard", Toast.LENGTH_SHORT).show()
             true
         }
     }
