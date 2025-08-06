@@ -47,6 +47,6 @@ The following REQUIRED files are included:
 
 Here's a video that demos all of the app's implemented features:
 
-<img src='https://youtu.be/r8n3sqDt27M' title='Video Demo' width='' alt='Video Demo' />
+[![Video Demo](https://img.youtube.com/vi/r8n3sqDt27M/0.jpg)](https://www.youtube.com/watch?v=r8n3sqDt27M)
 
 VIDEO created with OBS
