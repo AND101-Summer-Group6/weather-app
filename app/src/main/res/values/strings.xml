@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">DailySkies</string>
     <string name="temperature_format">%1$.1f°F</string>
+    <string name="temperature_with_text_format">Temperature: %1$.1f°F</string>
+    <string name="temperature_min_max_format">%1$.1f/%2$.1f°F</string>
     <string name="icon_url_format">https:%1$s</string>
     <string name="humidity_format">Humidity: %1$d%%</string>
+    <string name="wind_format">Wind: %.1f</string>
+    <string name="precipitation_format">Precipitation: %.1fmm</string>
+
 </resources>
