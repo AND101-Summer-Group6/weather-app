@@ -45,9 +45,11 @@ class MainActivity : AppCompatActivity() {
             override fun onSuccess(statusCode: Int, headers: Headers, json: JSON) {
                 Log.d("Weather", "response successful: $json")
                 val current = json.jsonObject.getJSONObject("current")
-                val tempF = current.getString("temp_f")
-                Log.d("tempF", "current temp set: $tempF")
-                val currCityWeather= CityWeather(location,"$tempF\u00B0F")
+                val tempF = current.getDouble("temp_f")
+                val condition=current.getJSONObject("condition").getString("text")
+                val conditionIconUrl=applicationContext.getString(R.string.icon_url_format,current.getJSONObject("condition").getString("icon"))
+                val humidity=current.getInt("humidity")
+                val currCityWeather= CityWeather(location,tempF,condition,conditionIconUrl,humidity)
                 cityWeatherList.add(currCityWeather)
                 val adapter = WeatherAdapter(cityWeatherList)
                 rvWeather.adapter = adapter

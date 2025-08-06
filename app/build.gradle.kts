@@ -52,6 +52,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
     implementation(libs.asynchttpclient)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
