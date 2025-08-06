@@ -2,4 +2,5 @@
     <string name="app_name">weather-app</string>
     <string name="temperature_format">%1$.1f°F</string>
     <string name="icon_url_format">https:%1$s</string>
+    <string name="humidity_format">Humidity: %1$d%%</string>
 </resources>

@@ -3,7 +3,30 @@
     <style name="Base.Theme.Weatherapp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/bangers</item>
     </style>
 
     <style name="Theme.Weatherapp" parent="Base.Theme.Weatherapp" />
+
+    <style name="CityNameText">
+        <item name="android:fontFamily">@font/luckiest_guy</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#FF000000</item>
+    </style>
+
+    <style name="WeatherConditionText">
+        <item name="android:fontFamily">@font/chewy</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FF444444</item>
+    </style>
+
+
+    <style name="WeatherHumidityText">
+        <item name="android:fontFamily">@font/comic_neue_light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">#FF888888</item>
+        <item name="android:textColor">#FF000000</item>
+    </style>
+
+
 </resources>

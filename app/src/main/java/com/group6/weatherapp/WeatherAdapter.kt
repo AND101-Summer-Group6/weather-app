@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
@@ -44,10 +45,14 @@ class WeatherAdapter(private val weatherList: List<CityWeather>) : RecyclerView.
         val formatted = holder.itemView.context.getString(R.string.temperature_format, temp)
         holder.cityTemperature.text = formatted
         holder.cityCondition.text=weather.condition
-        holder.cityHumidity.text=weather.humidity.toString()
+        holder.cityHumidity.text=holder.itemView.context.getString(R.string.humidity_format,weather.humidity)
         Glide.with(holder.itemView.context)
             .load(weather.conditionIcon)
             .fitCenter()
             .into(holder.cityConditionIcon)
+        holder.itemView.setOnLongClickListener {
+            Toast.makeText(holder.itemView.context, "You long-clicked ${weather.city}", Toast.LENGTH_SHORT).show()
+            true
+        }
     }
 }
