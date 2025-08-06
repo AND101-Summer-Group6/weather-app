@@ -76,13 +76,14 @@ The JSON response will follow this structure:
 ## Error Handling and Rate Limiting
 
 - Standard error responses follow this format:
+```json
 {
     "error": {
         "code": 2006,
         "message": "API key provided is invalid"
 }
 }
-
+```
   - The free plan allows up to 5 million API calls per month. 
   - If rate limits are exceeded, the server will return HTTP 429 or an error object with an appropriate message.
 
