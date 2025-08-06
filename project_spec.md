@@ -36,12 +36,12 @@ Required Features:
 - [x] User can see the temperature data in each city
 - [x] User can see an image corresponding to the sky condition and time of day
 - [x] User can see the humidity data on each city
-- [ ] User can click on a specific city to view more details
+- [x] User can copy city name
 
 Stretch Features:
 
 - [ ] User can use a search bar that allows users to search up a specific city
-- [ ] User can see 
+- [ ] User can see more details for each city
 
 ### 2. Chosen API(s)
 
@@ -55,6 +55,9 @@ Required Feature
 - [x] User can view a list of cities
   - User scrolls 
     - => New cities are displayed
+- [x] User can copy city name
+  - User long clicks city
+    - => City name is copied to clipboard
 
 ## Wireframes
 

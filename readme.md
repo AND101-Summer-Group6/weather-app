@@ -30,7 +30,7 @@ The following REQUIRED features are completed:
   - API Consultant: Maanveer Singh integrated a free weather API with the app.
   - Product Manager: Adrian Abella Acosta submitted all documents, managed Git repository, developed wireframes, and (presented?)
 - [x] Goal Times:
-  - ...
+  - 1 week for everyone
 
 The following REQUIRED files are included:
 
@@ -40,13 +40,13 @@ The following REQUIRED files are included:
     - [x] Checked off 2+ completed features
     - [x] 2+ Videos/GIFs of build progress
 
-- [ ] Our 🎥 Demo Video
-    - [ ] We have also added the Demo Video Link to the Group Info Form on the course portal.
+- [x] Our 🎥 Demo Video
+    - [x] We have also added the Demo Video Link to the Group Info Form on the course portal.
 
 ## 🎥 Demo Video
 
 Here's a video that demos all of the app's implemented features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Demo' width='' alt='Video Demo' />
+<img src='https://youtu.be/r8n3sqDt27M' title='Video Demo' width='' alt='Video Demo' />
 
 VIDEO created with OBS
