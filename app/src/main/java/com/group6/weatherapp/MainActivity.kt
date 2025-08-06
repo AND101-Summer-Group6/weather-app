@@ -41,15 +41,34 @@ class MainActivity : AppCompatActivity() {
     }
     private fun fetchWeather(location: String) {
         val client = AsyncHttpClient()
-        client["https://api.weatherapi.com/v1/forecast.json?key=$key&q=$location&days=7", object : JsonHttpResponseHandler() {
+        client["https://api.weatherapi.com/v1/forecast.json?key=$key&q=$location&days=6", object : JsonHttpResponseHandler() {
             override fun onSuccess(statusCode: Int, headers: Headers, json: JSON) {
                 Log.d("Weather", "response successful: $json")
+
                 val current = json.jsonObject.getJSONObject("current")
                 val tempF = current.getDouble("temp_f")
                 val condition=current.getJSONObject("condition").getString("text")
                 val conditionIconUrl=applicationContext.getString(R.string.icon_url_format,current.getJSONObject("condition").getString("icon"))
                 val humidity=current.getInt("humidity")
-                val currCityWeather= CityWeather(location,tempF,condition,conditionIconUrl,humidity)
+                val precipitation=current.getDouble("precip_mm")
+                val wind=current.getDouble("wind_mph")
+
+                val forecastList = mutableListOf<ForecastWeather>()
+                val forecastDays = json.jsonObject.getJSONObject("forecast").getJSONArray("forecastday")
+
+                for (i in 0 until forecastDays.length()) {
+                    val dayObj = forecastDays.getJSONObject(i)
+                    val dateEpoch = dayObj.getLong("date_epoch")
+                    val dayInfo = dayObj.getJSONObject("day")
+                    val maxTempF = dayInfo.getDouble("maxtemp_f")
+                    val minTempF = dayInfo.getDouble("mintemp_f")
+                    val iconPathForecast = dayInfo.getJSONObject("condition").getString("icon")
+                    val iconUrlForecast = applicationContext.getString(R.string.icon_url_format, iconPathForecast)
+
+                    forecastList.add(ForecastWeather(dateEpoch,maxTempF,minTempF,iconUrlForecast))
+                }
+
+                val currCityWeather= CityWeather(location,tempF,condition,conditionIconUrl,humidity,precipitation,wind,forecastList)
                 cityWeatherList.add(currCityWeather)
                 val adapter = WeatherAdapter(cityWeatherList)
                 rvWeather.adapter = adapter
