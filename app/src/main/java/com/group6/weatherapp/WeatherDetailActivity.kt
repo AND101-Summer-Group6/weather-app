@@ -36,13 +36,15 @@ class WeatherDetailActivity : AppCompatActivity() {
                 .into(binding.imageDetailCondition)
             binding.textviewCityName.text=currCityWeather.city
             binding.textviewCurrTime.text=getCurrentTimeInUTCFormatted()
-            binding.textviewTemp.text=this.getString(R.string.temperature_format, currCityWeather.temperature)
+            binding.textviewTemp.text=this.getString(R.string.temperature_with_text_format, currCityWeather.temperature)
             binding.textviewPrecip.text=this.getString(R.string.precipitation_format,currCityWeather.precipitation)
             binding.textviewHumidity.text=this.getString(R.string.humidity_format,currCityWeather.humidity)
             binding.textviewWind.text=applicationContext.getString(R.string.wind_format,currCityWeather.wind)
             binding.listForecast.adapter= WeatherDetailAdapter(forecastList)
             binding.listForecast.layoutManager = LinearLayoutManager(this@WeatherDetailActivity,LinearLayoutManager.HORIZONTAL, false)
-
+            binding.btnBack.setOnClickListener {
+                finish()
+            }
         } else {
             finish()
         }
