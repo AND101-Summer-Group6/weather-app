@@ -31,18 +31,22 @@ list to more closely observe a particular city with more details on its weather.
 
 Required Features:
 
-- User can search weather from specific cities
-- User can click on a specific city to view more details
+- [x] Implement a RecyclerView that displays cities
+- [x] Display the name of each city
+- [x] Display temperature data in each city
+- [x] Display an image corresponding to the sky condition and time of day
+- [x] Display humidity data on each city
+- [ ] User can click on a specific city to view more details
 
 Stretch Features:
 
-- **fill in here**
-- ...
+- [ ] Search bar that allows users to search up a specific city
+- [x] 
 
 ### 2. Chosen API(s)
 
 - Weather API
-    - Get the weather from a city
+    - Fetch weather data from various cities
 
 ### 3. User Interaction
 
@@ -61,8 +65,10 @@ Required Feature
 <img src="/assets/LowFiWireframe.png" width=600 alt="LoFiWireframe of App">
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="/assets/HighFiWireframe.png" width=600 alt="HighFiWireframe of App">
 
 ### [BONUS] Interactive Prototype
+<img src="/assets/FigmaPrototype.gif" width=600 alt="Figma Prototype">
 
 ## Build Notes
 
