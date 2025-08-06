@@ -7,7 +7,6 @@
 - Country explorer
 - Recipe/cookbook app
 
-
 #### Maanveer:
 - Weather App
 - News sorting app

@@ -31,17 +31,17 @@ list to more closely observe a particular city with more details on its weather.
 
 Required Features:
 
-- [x] Implement a RecyclerView that displays cities
-- [x] Display the name of each city
-- [x] Display temperature data in each city
-- [x] Display an image corresponding to the sky condition and time of day
-- [x] Display humidity data on each city
+- [x] User can view a list of cities
+- [x] User can see the name of each city
+- [x] User can see the temperature data in each city
+- [x] User can see an image corresponding to the sky condition and time of day
+- [x] User can see the humidity data on each city
 - [ ] User can click on a specific city to view more details
 
 Stretch Features:
 
-- [ ] Search bar that allows users to search up a specific city
-- [x] 
+- [ ] User can use a search bar that allows users to search up a specific city
+- [ ] User can see 
 
 ### 2. Chosen API(s)
 
@@ -52,12 +52,9 @@ Stretch Features:
 
 Required Feature
 
-- **list first user action here**
-    - => **list result of user action here**
-    - ...
-- **list second user action here**
-    - => **list result of user action here**
-    - ...
+- [x] User can view a list of cities
+  - User scrolls 
+    - => New cities are displayed
 
 ## Wireframes
 
@@ -72,10 +69,9 @@ Required Feature
 
 ## Build Notes
 
-Here's a place for any other notes on the app, it's creation
-process, or what you learned this unit!
+<img src="/assets/Build0.gif" width=600 alt="Initial Build">
 
-For Milestone 2, include **2+ Videos/GIFs** of the build process here!
+<img src="/assets/Build1.gif" width=600 alt="Final Build">
 
 ## License
 
