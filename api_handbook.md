@@ -30,7 +30,7 @@ URL: https://api.weatherapi.com/v1/forecast.json?key=YOUR_API_KEY&q=LOCATION&day
 ## Request and Response Format
 
 The JSON response will follow this structure:
-
+```json
 {
     "location": {               <!-- Info about the requested city: name, country, lat, lon, localtime, etc.-->
     "name": "xyz",
